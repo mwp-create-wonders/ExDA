@@ -1,83 +1,185 @@
-# 📄 [论文标题 / Paper Title]
+# [ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images]
 
-> **Authors:** [Your Name], [Co-authors]  
-> **Affiliation:** [Your Institution / Lab]  
-> **Conference/Journal:** [Name, Year]  
-> **DOI:** [DOI Link]  
-> **PDF:** [Link to the Paper]  
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg" alt="PyTorch Version">
+  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/stars/mwp-create-wonders/ExDA?style=social" alt="GitHub Stars">
+</p>
 
----
-
-## 📝 Abstract
-[简要摘要，1~2 段，介绍研究背景、方法、结果和贡献。  
-建议与论文的 Abstract 保持一致或稍作精简。]
-
----
-
-## 🎯 Contributions
-- **[亮点 1]**（一句话描述）
-- **[亮点 2]**
-- **[亮点 3]**
-- **[可选亮点 4]**
+<div align="center">
+  <b><a href="README.md">中文</a></b> •
+  <a href="README_en.md">English</a>
+</div>
 
 ---
 
-## 🔍 Method Overview
-[简要介绍方法核心思想]  
+本项目是会议论文 **ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images** (ACM MM'25) 的官方实现。
 
-![Method Overview](figures/method.png)
+**论文链接: https://doi.org/10.1145/3746027.3755434**
 
----
+## 摘要
+随着图像生成式AI模型日益普及，公众对内容安全的需求急剧增长。尽管模型开发者已引入对齐机制来阻止威胁性图像的生成，且关于AI生成图像真实性的验证研究已广泛开展，但仍有大量"监管外图像"被发现游离于现有监管体系之外——这些图像既未被现有对齐机制覆盖，也不在当前检测方法的识别范围内。
 
-## 📊 Experimental Results
-[说明实验的主要结论，可以配图或表格]  
+为此，我们提出ExDA检测溯源框架，专门针对这类监管外图像。该系统采用冻结参数的CLIP:ViT-L/14作为视觉特征提取器，获取丰富且无偏见的视觉特征，并通过文本特征降维层统一语义风格。为获得高区分度特征，ExDA创新性地设计了SFS-ResNet网络，其基础层均被我们精心设计的"多通道边界卷积(MMConv)"模块替代。检测器后端还集成了即插即用的多代模型溯源组件。
 
-![Results](figures/results.png)
+鉴于现有公开数据集中缺乏监管外图像样本，我们构建了包含72,000张此类图像的ExImage数据集用于验证。实验表明：ExDA在ExImage上达到99.07%的平均检测准确率；在跨数据集测试中，相较于GenImage和高难度Chameleon数据集分别实现+5.73%和+10.36%的性能提升。值得注意的是，ExDA在溯源任务中同样表现优异，展现出识别生成模型内在指纹的卓越能力。
 
----
+项目代码已开源：https://github.com/mwp-create-wonders/ExDA
 
-## 🚀 Code Usage
+
+<p align="center">
+  <img src="framework.jpg" width="80%" alt="项目概览图"/>
+  <br>
+  <em>图1: 整体框架图</em>
+</p>
+
+## ✨ 主要特性
+
+*   **高效的检测与溯源框架 (ExDA)**: 我们提出了一个名为 **ExDA** 的高效框架，专为AI生成的特殊监管图像提供精准的检测与可靠的溯源。
+
+*   **鲁棒的视觉特征处理**: 采用冻结的 **CLIP:ViT-L/14** 作为骨干，确保获取无偏且鲁棒的视觉特征。结合我们独创的 **SFS-ResNet** 网络（其核心为 **MMConv**），它能高效过滤冗余信息，并捕获用于区分真伪的高频判别性特征。
+
+*   **抗内容干扰设计**: 通过解耦文本编码器并引入 **文本特征降维层**，ExDA能最大程度地减少图像具体内容对检测结果的干扰，使模型更专注于生成痕迹本身，而非图像语义。
+
+*   **即插即用的溯源能力**: 框架包含一个高扩展性的 **溯源插件**。该插件具备小样本学习能力，仅需少量来自未知生成模型的图像，即可快速学习其底层指纹，有效解决现实世界中的责任追溯问题。
+
+*   **首创的专用数据集 (ExImage)**: 针对此特定领域，我们构建并开源了 **ExImage 数据集**。该数据集填补了特殊监管图像检测领域的空白，对维护社会稳定与公共安全具有重要意义。
+
+## ⚙️ 模型架构
+
+我们的核心模型 ([模型名]) 由 [模块A]、[模块B] 和 [模块C] 组成。其关键创新在于 [简述你的创新点，例如：引入了一个新的注意力机制来...]。
+
+<p align="center">
+  <img src="framework.jpg" width="80%" alt="项目概览图"/>
+  <br>
+  <em>图1: 整体框架图</em>
+</p>
+
+
+## 🚀 快速开始
 
 ### 1. 环境配置
+
+我们建议使用 Conda 来管理依赖环境。
+
 ```bash
-conda create -n your_env_name python=3.x
-conda activate your_env_name
+# 克隆本仓库
+git clone https://github.com/[你的Github用户名]/[你的仓库名].git
+cd [你的仓库名]
+
+# 创建并激活Conda环境
+conda create -n [你的环境名] python=3.8
+conda activate [你的环境名]
+
+# 安装依赖
+# requirements.txt 应包含如 pytorch, torchvision, numpy, tqdm 等所有依赖
 pip install -r requirements.txt
-2. 数据准备
-[说明数据集的下载和放置方式]
+```
 
-3. 运行示例
-bash
-复制
-编辑
-python train.py --config configs/config.yaml
-python test.py --checkpoint checkpoints/best_model.pth
-📌 Citation
-如果你在研究中使用了我们的工作，请引用以下文献：
+### 2. 数据准备
 
-bibtex
-复制
-编辑
-@article{your_bib_key,
-  title={Your Paper Title},
-  author={Your Name and Coauthors},
-  journal={Journal/Conference Name},
-  year={2025},
-  doi={DOI}
+请从 [数据来源链接] 下载 [数据集名称] 数据集，并将其解压至 `data/` 目录下。目录结构应如下所示：
+
+```
+[你的仓库名]/
+├── data/
+│   ├── [数据集名称]/
+│   │   ├── train/
+│   │   └── test/
+├── src/
+└── README.md
+```
+
+### 3. 预训练模型
+
+你可以从 [Hugging Face Hub / Google Drive / 百度网盘链接] 下载我们训练好的模型权重。
+
+将下载的 `.pth` 或 `.pt` 文件放入 `checkpoints/` 文件夹中。
+
+### 4. 评估
+
+使用以下命令在 [数据集名称] 的测试集上评估我们的预训练模型：
+
+```bash
+python evaluate.py \
+    --model_name [你的模型名] \
+    --checkpoint_path checkpoints/[你的模型权重文件名].pth \
+    --data_dir data/[数据集名称]
+```
+
+### 5. 训练
+
+如果你想从头开始训练模型，请运行：
+
+```bash
+# 单GPU训练
+python train.py \
+    --model_name [你的模型名] \
+    --data_dir data/[数据集名称] \
+    --epochs 100 \
+    --batch_size 64 \
+    --learning_rate 1e-4
+
+# (可选) 多GPU训练
+# torchrun --nproc_per_node=[GPU数量] train.py ...
+```
+
+## 📊 实验结果
+
+我们在多个基准上验证了我们方法的有效性。
+
+<!-- 表格：这是另一种形式的“图表”，非常适合展示量化结果 -->
+### 在 [数据集A] 上的性能对比
+
+| 方法         | Backone  | Accuracy (%) | F1-Score |
+|--------------|----------|--------------|----------|
+| Baseline     | ResNet-50| 85.2         | 0.84     |
+| Method X     | ResNet-50| 87.5         | 0.87     |
+| **Ours**     | ResNet-50| **89.1**     | **0.89** |
+| **Ours**     | ViT-Base | **91.3**     | **0.91** |
+
+<!-- 示意图3：性能曲线图或可视化结果对比图 -->
+<!-- 这可以是训练过程中的 Loss/Accuracy 曲线，或是输入/输出的直观对比 -->
+<p align="center">
+  <img src="assets/performance_curve.png" width="60%" alt="性能曲线"/>
+  <br>
+  <em>图3: 在 [数据集A] 上的训练准确率曲线</em>
+</p>
+
+## 🤝 如何贡献
+
+我们非常欢迎社区的贡献！如果你有任何想法或发现了 bug，请随时：
+
+1.  Fork 本仓库
+2.  创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
+3.  提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
+4.  推送到分支 (`git push origin feature/AmazingFeature`)
+5.  创建一个 Pull Request
+
+## 📜 开源许可
+
+本项目采用 [MIT License](LICENSE) 开源许可。
+
+## 🎓 如何引用
+
+如果我们的工作对你的研究有所帮助，请考虑引用我们的论文：
+
+```bibtex
+@inproceedings{[你的引用标签],
+  author    = {[作者A] and [作者B]},
+  title     = {[你的论文标题]},
+  booktitle = {[会议名称]},
+  year      = {[年份]}
 }
-📬 Contact
-如有问题，请联系：
+```
 
-[Your Name] - [your.email@example.com]
+## 🙏 致谢
 
-或在 GitHub 中提交 Issue
+*   感谢 [某某组织或个人] 提供的计算资源。
+*   本项目的代码结构参考了 [某个优秀开源项目] 的实现。
 
-⭐ Acknowledgement
-[可选，致谢资助项目、合作伙伴或参考的开源代码]
+---
+```
 
-markdown
-复制
-编辑
-
-如果你愿意，我可以帮你**把论文标题、作者、期刊信息和摘要直接替换进去**，让它变成你的专属版本，这样你复制到 GitHub 就能直接用。  
-你要我帮你直接填好具体信息吗？这样更省事。
+希望这个模板能对你有所帮助！祝你的项目在 GitHub 上大放异彩！
