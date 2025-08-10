@@ -29,7 +29,7 @@
 
 
 <p align="center">
-  <img src="Abstract.png" width="90%" alt="项目概览图"/>
+  <img src="images/Abstract.png" width="90%" alt="项目概览图"/>
   <br>
   <em>图1: 论文首页</em>
 </p>
@@ -43,7 +43,7 @@
 2.  在文本编码器中引入 **文本特征降维层**，以最大限度地降低图像内容对检测过程的干扰，使模型专注于伪造痕迹。
 
 <p align="center">
-  <img src="framework.jpg" width="80%" alt="项目概览图"/>
+  <img src="images/framework.jpg" width="80%" alt="项目概览图"/>
   <br>
   <em>图2: 整体框架图</em>
 </p>
@@ -136,33 +136,31 @@ python train.py \
 
 我们在多个基准上验证了我们方法的有效性。
 
-<!-- 表格：这是另一种形式的“图表”，非常适合展示量化结果 -->
-### 在 [数据集A] 上的性能对比
 
-| 方法         | Backone  | Accuracy (%) | F1-Score |
-|--------------|----------|--------------|----------|
-| Baseline     | ResNet-50| 85.2         | 0.84     |
-| Method X     | ResNet-50| 87.5         | 0.87     |
-| **Ours**     | ResNet-50| **89.1**     | **0.89** |
-| **Ours**     | ViT-Base | **91.3**     | **0.91** |
+### 在ExImage上的性能对比
 
-<!-- 示意图3：性能曲线图或可视化结果对比图 -->
-<!-- 这可以是训练过程中的 Loss/Accuracy 曲线，或是输入/输出的直观对比 -->
 <p align="center">
-  <img src="assets/performance_curve.png" width="60%" alt="性能曲线"/>
+  <img src="images/ExImage.png" width="90%" alt="性能曲线"/>
   <br>
-  <em>图3: 在 [数据集A] 上的训练准确率曲线</em>
+  <em>图3: 在ExImage上的训练准确率曲线</em>
 </p>
 
-## 🤝 如何贡献
+### 在GenImage上的性能对比
 
-我们非常欢迎社区的贡献！如果你有任何想法或发现了 bug，请随时：
+<p align="center">
+  <img src="images/GenImage.png" width="90%" alt="性能曲线"/>
+  <br>
+  <em>图4: 在GenImage上的训练准确率曲线</em>
+</p>
 
-1.  Fork 本仓库
-2.  创建你的特性分支 (`git checkout -b feature/AmazingFeature`)
-3.  提交你的更改 (`git commit -m 'Add some AmazingFeature'`)
-4.  推送到分支 (`git push origin feature/AmazingFeature`)
-5.  创建一个 Pull Request
+### 在AGGCBenchmark和Chameleon上的性能对比
+
+<p align="center">
+  <img src="images/AIGC+chameleon.png" width="90%" alt="性能曲线"/>
+  <br>
+  <em>图5: 在AGGCBenchmark和Chameleon上的训练准确率曲线</em>
+</p>
+
 
 ## 📜 开源许可
 
