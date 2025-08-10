@@ -1,4 +1,4 @@
-# [Project Name] - [A brief one-sentence description of your project]
+# [ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images]
 
 <!-- Badges: They provide a quick overview of the project's status. You can generate them from shields.io -->
 <p align="center">
@@ -8,7 +8,6 @@
   <img src="https://img.shields.io/github/stars/[Your-GitHub-Username]/[Your-Repo-Name]?style=social" alt="GitHub Stars">
 </p>
 
-<!-- Language Switcher: A good practice for projects with a broad audience -->
 <div align="center">
   <a href="README.md">中文</a> •
   <b><a href="README_en.md">English</a></b>
