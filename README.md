@@ -1,11 +1,10 @@
-# [项目名称] - [一句话描述你的项目]
+# [ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images]
 
-<!-- 徽章：这些徽章能直观地展示项目状态，让README更专业。你可以从 shields.io 等网站生成 -->
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/PyTorch-1.12+-ee4c2c.svg" alt="PyTorch Version">
-  <img src="https://img.shields.io/github/license/[你的Github用户名]/[你的仓库名]" alt="License">
-  <img src="https://img.shields.io/github/stars/[你的Github用户名]/[你的仓库名]?style=social" alt="GitHub Stars">
+  <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg" alt="PyTorch Version">
+  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA" alt="License">
+  <img src="https://img.shields.io/github/stars/mwp-create-wonders/ExDA?style=social" alt="GitHub Stars">
 </p>
 
 <!-- 语言切换选项，如果你的项目受众广泛，这是一个好习惯 -->
