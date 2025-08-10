@@ -1,11 +1,10 @@
 # [ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images]
 
-<!-- Badges: They provide a quick overview of the project's status. You can generate them from shields.io -->
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/PyTorch-1.12+-ee4c2c.svg" alt="PyTorch Version">
-  <img src="https://img.shields.io/github/license/[Your-GitHub-Username]/[Your-Repo-Name]" alt="License">
-  <img src="https://img.shields.io/github/stars/[Your-GitHub-Username]/[Your-Repo-Name]?style=social" alt="GitHub Stars">
+  <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg" alt="PyTorch Version">
+  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/stars/mwp-create-wonders/ExDA?style=social" alt="GitHub Stars">
 </p>
 
 <div align="center">
