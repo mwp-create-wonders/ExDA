@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg" alt="PyTorch Version">
-  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA" alt="License">
+  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA?style=flat-square" alt="License">
   <img src="https://img.shields.io/github/stars/mwp-create-wonders/ExDA?style=social" alt="GitHub Stars">
 </p>
 
