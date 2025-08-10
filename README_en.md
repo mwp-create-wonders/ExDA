@@ -30,10 +30,15 @@ In this work, we propose [briefly describe your core method], which achieves sig
 
 ## ✨ Main Features
 
-*   **State-of-the-Art Performance**: Achieves SOTA (State-of-the-Art) or competitive results on major benchmarks like [Dataset A] and [Dataset B].
-*   **Modular Design**: The code is well-structured, making it easy to understand, extend, and build upon for further research.
-*   **Easy Reproduction**: Provides complete training and evaluation scripts, along with pre-trained models, to facilitate quick reproduction of the paper's results.
-*   **[Another Feature]**: e.g., Lightweight, Efficient, Distributed Training Support.
+*   **Efficient Detection & Attribution Framework (ExDA)**: We introduce **ExDA**, an efficient framework designed for the precise detection and reliable attribution of AI-generated special regulatory images.
+
+*   **Robust Visual Feature Processing**: Leverages a frozen **CLIP:ViT-L/14** as the backbone to extract unbiased and robust visual features. This is coupled with our novel **SFS-ResNet**, which innovatively replaces basic layers with **MMConv** to efficiently filter redundant information and capture high-frequency discriminative features crucial for forgery detection.
+
+*   **Content-Agnostic Design**: By decoupling the text encoder and introducing a **text feature dimensionality reduction layer**, ExDA minimizes interference from specific image content. This allows the model to focus on the underlying generation artifacts rather than the image's semantics.
+
+*   **Plug-and-Play Attribution**: The framework includes a highly extensible **attribution plugin** with few-shot learning capabilities. It can memorize low-level generator fingerprints from just a handful of unseen examples, effectively addressing real-world accountability and tracing challenges.
+
+*   **Pioneering Dataset (ExImage)**: To support research in this critical area, we have constructed and released the **ExImage dataset**. This dataset fills a significant research gap concerning special regulatory images, which are of great importance for social stability and national security.
 
 ## ⚙️ Model Architecture
 
