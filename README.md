@@ -14,9 +14,8 @@
 
 ---
 
-本项目是会议论文 **ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images** (ACM MM'25) 的官方实现。
+本项目是会议论文 **[ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images](https://doi.org/10.1145/3746027.3755434)** (ACM MM'25) 的官方实现。
 
-**论文链接: https://doi.org/10.1145/3746027.3755434**
 
 ## ✅ 摘要
 随着图像生成式AI模型日益普及，公众对内容安全的需求急剧增长。尽管模型开发者已引入对齐机制来阻止威胁性图像的生成，且关于AI生成图像真实性的验证研究已广泛开展，但仍有大量"监管外图像"被发现游离于现有监管体系之外——这些图像既未被现有对齐机制覆盖，也不在当前检测方法的识别范围内。
@@ -100,7 +99,7 @@ pip install -r requirements.txt
 
 ### 3. 预训练模型
 
-你可以从 [Hugging Face Hub / Google Drive / 百度网盘链接] 下载我们训练好的模型权重。
+你可以从 [Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing) 下载我们训练好的模型权重。
 
 将下载的 `.pth` 或 `.pt` 文件放入 `checkpoints/` 文件夹中。
 
