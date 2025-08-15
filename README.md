@@ -187,6 +187,8 @@ python train.py \
 
 *   感谢 [某某组织或个人] 提供的计算资源。
 *   本项目的代码结构参考了如下的优秀项目实践
+  
   [1] karsh Ojha, Yuheng Li, and Yong Jae Lee. 2023. Towards Universal Fake Image Detectors that Generalize Across Generative Models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023. 24480–24489.
+  
   [2] 
 
