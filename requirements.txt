@@ -1,0 +1,4 @@
+python==3.8.19
+torch==2.2.1
+torchvision==0.17.2
+tensforboard==2.13.0
