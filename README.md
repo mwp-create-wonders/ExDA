@@ -145,7 +145,7 @@ python train.py \
 <p align="center">
   <img src="images/ExImage.png" width="90%" alt="性能曲线"/>
   <br>
-  <em>图3: 在ExImage上的训练准确率曲线</em>
+  <em>图3: 在ExImage上的准确率</em>
 </p>
 
 ### 在GenImage上的性能对比
@@ -153,7 +153,7 @@ python train.py \
 <p align="center">
   <img src="images/GenImage.png" width="90%" alt="性能曲线"/>
   <br>
-  <em>图4: 在GenImage上的训练准确率曲线</em>
+  <em>图4: 在GenImage上的准确率</em>
 </p>
 
 ### 在AGGCBenchmark和Chameleon上的性能对比
@@ -161,7 +161,7 @@ python train.py \
 <p align="center">
   <img src="images/AIGC+chameleon.png" width="90%" alt="性能曲线"/>
   <br>
-  <em>图5: 在AGGCBenchmark和Chameleon上的训练准确率曲线</em>
+  <em>图5: 在AGGCBenchmark和Chameleon上的准确率</em>
 </p>
 
 
