@@ -168,20 +168,20 @@ python train.py \
 
 ## 🎓 如何引用
 
-如果我们的工作对你的研究有所帮助，请考虑引用我们的论文：
+如果我们的工作对你的研究有所帮助，请**引用我们的论文**：
 
 ```bibtex
-@inproceedings{[你的引用标签],
-  author    = {[作者A] and [作者B]},
-  title     = {[你的论文标题]},
-  booktitle = {[会议名称]},
-  year      = {[年份]}
+@inproceedings{ExDA_mwp2025,
+  author    = {Wenpeng Mu, Zheng Li, Qiang Xu, Xinghao Jiang, and Tanfeng Sun},
+  title     = {ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images},
+  booktitle = {In Proceedings of the 33rd ACM International Conference on Multimedia (MM'25)},
+  year      = {2025}
 }
 ```
 
 ## 🙏 致谢
 
-*   感谢 [某某组织或个人] 提供的计算资源。
+*   感谢**上海交通大学计算机（网络空间安全）学院人工智能与认知安全研究所**提供的计算资源。
 *   本项目的代码结构参考了如下的优秀项目实践
   
   [1] karsh Ojha, Yuheng Li, and Yong Jae Lee. 2023. Towards Universal Fake Image Detectors that Generalize Across Generative Models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023. 24480–24489.
