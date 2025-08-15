@@ -124,6 +124,7 @@ python validate.py --arch=CLIP:ViT-L/14 --ckpt=checkpoints_our/~.pth --result_fo
 
 ### 5. 训练
 
+！！！该部分我们将尽快更新
 如果你想从头开始训练模型，请运行：
 
 ```bash
@@ -133,7 +134,7 @@ python train.py \
     --epochs 100 \
     --batch_size 64 \
     --learning_rate 1e-4
-
+```
 
 ## 📊 实验结果
 
