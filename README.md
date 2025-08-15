@@ -19,6 +19,8 @@
 
 ## 📰 最新动态
 
+-[2025-08-15] 🎉 我们更新了测试代码validate.py和工具文件earlystop.py，可以按照【快速开始】中的指引进行测试！
+
 -[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问谷歌网盘下载啦！
 
 -[2025-08-10] 🎉 我们更新部分代码，在data/文件夹下可以查看ExImage和GenImage功率谱图！
@@ -75,23 +77,24 @@
 
 ### 1. 环境配置
 
-我们建议使用 Conda 来管理依赖环境。
+建议使用 Conda 来管理依赖环境。
 
 ```bash
 # 克隆本仓库
-git clone https://github.com/[你的Github用户名]/[你的仓库名].git
-cd [你的仓库名]
+git clone https://github.com/mwp-create-wonders/ExDA.git
+cd ExDA
 
 # 创建并激活Conda环境
 conda create -n [你的环境名] python=3.8
 conda activate [你的环境名]
 
 # 安装依赖
-# requirements.txt 应包含如 pytorch, torchvision, numpy, tqdm 等所有依赖
 pip install -r requirements.txt
 ```
 
 ### 2. 数据准备
+
+！！！该部分我们正在整理更新
 
 请从 [数据来源链接] 下载 [数据集名称] 数据集，并将其解压至 `data/` 目录下。目录结构应如下所示：
 
@@ -109,17 +112,14 @@ pip install -r requirements.txt
 
 你可以从 [Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing) 下载我们训练好的模型权重。
 
-将下载的 `.pth` 或 `.pt` 文件放入 `checkpoints/` 文件夹中。
+将下载的 `.pth` 文件放入 `checkpoints/` 文件夹中。
 
 ### 4. 评估
 
-使用以下命令在 [数据集名称] 的测试集上评估我们的预训练模型：
+使用以下命令在测试集上评估我们的预训练模型：
 
 ```bash
-python evaluate.py \
-    --model_name [你的模型名] \
-    --checkpoint_path checkpoints/[你的模型权重文件名].pth \
-    --data_dir data/[数据集名称]
+python validate.py --arch=CLIP:ViT-L/14 --ckpt=checkpoints_our/~.pth --result_folder=result/xxx --real_path=xxx --fake_path=xxx --key=xxx
 ```
 
 ### 5. 训练
@@ -127,7 +127,6 @@ python evaluate.py \
 如果你想从头开始训练模型，请运行：
 
 ```bash
-# 单GPU训练
 python train.py \
     --model_name [你的模型名] \
     --data_dir data/[数据集名称] \
@@ -135,14 +134,10 @@ python train.py \
     --batch_size 64 \
     --learning_rate 1e-4
 
-# (可选) 多GPU训练
-# torchrun --nproc_per_node=[GPU数量] train.py ...
-```
 
 ## 📊 实验结果
 
 我们在多个基准上验证了我们方法的有效性。
-
 
 ### 在ExImage上的性能对比
 
