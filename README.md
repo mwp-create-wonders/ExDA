@@ -174,7 +174,7 @@ python train.py \
 @inproceedings{ExDA_mwp2025,
   author    = {Wenpeng Mu, Zheng Li, Qiang Xu, Xinghao Jiang, and Tanfeng Sun},
   title     = {ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images},
-  booktitle = {In Proceedings of the 33rd ACM International Conference on Multimedia (MM'25)},
+  booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia (MM'25)},
   year      = {2025}
 }
 ```
