@@ -202,6 +202,7 @@ def _extract_residual(self, image, denoiser_sigma=1):
 ## 🙏 致谢
 
 *   感谢**上海交通大学计算机（网络空间安全）学院人工智能与认知安全研究所**提供的计算资源。
+*   感谢上海交通大学的李旻阳、袁一帆、李峥、邱昊、李晟彦、江楠和王跻燕等同学对数据集的贡献。
 *   本项目的代码结构参考了如下的优秀项目实践
   
   [1] karsh Ojha, Yuheng Li, and Yong Jae Lee. 2023. Towards Universal Fake Image Detectors that Generalize Across Generative Models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023. 24480–24489.
