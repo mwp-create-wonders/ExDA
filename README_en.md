@@ -3,178 +3,148 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c.svg" alt="PyTorch Version">
-  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA?style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/license/mwp-create-wonders/ExDA" alt="License">
   <img src="https://img.shields.io/github/stars/mwp-create-wonders/ExDA?style=social" alt="GitHub Stars">
 </p>
 
 <div align="center">
-  <a href="README.md">中文</a> •
-  <b><a href="README_en.md">English</a></b>
+  <b><a href="README.md">中文</a></b> •
+  <a href="README_en.md">English</a>
 </div>
 
 ---
 
-This is the official implementation of the paper **"[Your Paper Title]"** ([Conference Name] [Year]).
+This project is the official implementation of the conference paper **https://doi.org/10.1145/3746027.3755434** (ACM MM'25).
 
-**[ Paper: [arXiv](https://arxiv.org/abs/xxxx.xxxxx) | [Official Publication](https://doi.org/xxxx) ]**
+## 📰 Latest Updates
+-[2025-08-28] 🎉 我们整理发布ExImage数据集，现在可以访问[Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载啦！！
 
-In this work, we propose [briefly describe your core method], which achieves significant improvements for [describe the problem it solves].
+-[2025-08-17] 🎉 我们更新了绘制功率谱图的关键步骤说明，可以按照【快速开始】中的指引进行绘制！
 
-<!-- Diagram 1: A high-level workflow/concept diagram -->
-<!-- This diagram should be intuitive, allowing people unfamiliar with your field to quickly grasp what your project does. -->
+-[2025-08-15] 🎉 我们最新的一篇综述工作已经被ACM Computing Surveys期刊接受，题目为[Advancements in AI-Generated Content Forensics: A Systematic Literature Review](https://doi.org/10.1145/3760526)。欢迎各位同仁阅读并批评指正，如对您的研究有帮助，欢迎**引用**！
+
+-[2025-08-15] 🎉 我们更新了测试代码validate.py和工具文件earlystop.py，可以按照【快速开始】中的指引进行测试！
+
+-[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问[Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing)下载啦！
+
+-[2025-08-10] 🎉 我们更新部分代码，在data/文件夹下可以查看ExImage和GenImage功率谱图！
+
+-[2025-07-06] 🎉 我们论文正式被ACM MM'25接受！
+
+## 🔍 Abstract
+With the proliferation of generative AI models for image synthesis, public demand for content safety has surged. While model developers have introduced alignment mechanisms to prevent harmful content generation, and extensive research exists on verifying AI-generated images' authenticity, a significant category of "Ex-Regulatory Images" remains undetected - these images evade existing regulatory frameworks and detection methods.
+
+To address this, we propose ExDA, a detection and attribution framework specifically targeting these unregulated images. Our system employs frozen CLIP:ViT-L/14 as a visual feature extractor to obtain unbiased features, combined with a text feature dimensionality reduction layer to unify semantic styles. For enhanced discriminative features, ExDA introduces SFS-ResNet with our novel "Multi-Channel Boundary Convolution (MMConv)" modules replacing baseline layers. The framework also integrates plug-and-play multi-generation-model attribution components.
+
+Given the lack of public datasets for Ex-Regulatory Images, we constructed ExImage containing 72,000 such images. Experiments show ExDA achieves 99.07% average detection accuracy on ExImage, outperforming GenImage and challenging Chameleon datasets by +5.73% and +10.36% respectively. Remarkably, ExDA also excels in attribution tasks, demonstrating exceptional capability in identifying generative model fingerprints.
+
+Project code is available at: https://github.com/mwp-create-wonders/ExDA
+
 <p align="center">
-  <img src="assets/overview_diagram.png" width="80%" alt="Project Overview Diagram"/>
+  <img src="images/Abstract.png" width="90%" alt="Project Overview"/>
   <br>
-  <em>Figure 1: The overall workflow of [Project Name].</em>
+  <em>Figure 1: Paper cover</em>
 </p>
-
-## ✨ Main Features
-
-*   **Efficient Detection & Attribution Framework (ExDA)**: We introduce **ExDA**, an efficient framework designed for the precise detection and reliable attribution of AI-generated special regulatory images.
-
-*   **Robust Visual Feature Processing**: Leverages a frozen **CLIP:ViT-L/14** as the backbone to extract unbiased and robust visual features. This is coupled with our novel **SFS-ResNet**, which innovatively replaces basic layers with **MMConv** to efficiently filter redundant information and capture high-frequency discriminative features crucial for forgery detection.
-
-*   **Content-Agnostic Design**: By decoupling the text encoder and introducing a **text feature dimensionality reduction layer**, ExDA minimizes interference from specific image content. This allows the model to focus on the underlying generation artifacts rather than the image's semantics.
-
-*   **Plug-and-Play Attribution**: The framework includes a highly extensible **attribution plugin** with few-shot learning capabilities. It can memorize low-level generator fingerprints from just a handful of unseen examples, effectively addressing real-world accountability and tracing challenges.
-
-*   **Pioneering Dataset (ExImage)**: To support research in this critical area, we have constructed and released the **ExImage dataset**. This dataset fills a significant research gap concerning special regulatory images, which are of great importance for social stability and national security.
 
 ## ⚙️ Model Architecture
+Our core model **ExDA** comprises three components:
+1. **Visual Feature Extractor (CLIP:ViT-L/14)**
+2. **Specialized Feature Processor (SFS-ResNet)**
+3. **Decoupled Text Encoder**
 
-Our core model, **[Model Name]**, consists of [Module A], [Module B], and [Module C]. The key innovation lies in [briefly state the innovation, e.g., the introduction of a novel attention mechanism to...].
+Key innovations:
+1. **MMConv modules** replace baseline layers in SFS-ResNet to filter redundancy and capture high-frequency discriminative features
+2. **Text feature dimensionality reduction layer** minimizes content interference, focusing detection on generation artifacts
 
-<!-- Diagram 2: A detailed model architecture diagram -->
-<!-- This is often taken directly from your paper, showing the model's internal structure and data flow. -->
 <p align="center">
-  <img src="assets/model_architecture.png" width="70%" alt="Model Architecture Diagram"/>
+  <img src="images/framework.jpg" width="80%" alt="Framework"/>
   <br>
-  <em>Figure 2: The detailed architecture of our [Model Name].</em>
+  <em>Figure 2: System architecture</em>
 </p>
 
-For more technical details, please refer to our [paper](https://arxiv.org/abs/xxxx.xxxxx).
+## ✨ Key Features
+* **Efficient Detection & Attribution Framework**: Specialized framework for accurate detection and reliable tracing of Ex-Regulatory Images
+* **Robust Visual Processing**: Frozen CLIP backbone ensures unbiased features, combined with MMConv-based SFS-ResNet for effective feature extraction
+* **Content Interference Mitigation**: Decoupled text encoder reduces semantic content impact on detection
+* **Plug-and-Play Attribution**: Expandable plugin enables small-sample learning of generation model fingerprints
+* **First-of-its-kind Dataset**: ExImage addresses the critical gap in Ex-Regulatory Image detection research
+
+## 📚 ExImage Dataset
+Download from [Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)
 
 ## 🚀 Quick Start
 
 ### 1. Environment Setup
-
-We recommend using Conda to manage the environment.
-
 ```bash
-# Clone this repository
-git clone https://github.com/[Your-GitHub-Username]/[Your-Repo-Name].git
-cd [Your-Repo-Name]
+git clone https://github.com/mwp-create-wonders/ExDA.git
+cd ExDA
 
-# Create and activate the conda environment
-conda create -n [your_env_name] python=3.8
-conda activate [your_env_name]
+conda create -n exda_env python=3.8
+conda activate exda_env
 
-# Install dependencies
-# The requirements.txt file should list all dependencies such as pytorch, torchvision, numpy, tqdm, etc.
 pip install -r requirements.txt
 ```
 
-### 2. Data Preparation
+### 2. Dataset Preparation
+Download ExImage dataset from [Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing) and extract to `data/`
 
-Please download the [Dataset Name] dataset from [Link to Dataset] and extract it to the `data/` directory. The directory structure should be as follows:
-
-```
-[Your-Repo-Name]/
-├── data/
-│   ├── [Dataset-Name]/
-│   │   ├── train/
-│   │   └── test/
-├── src/
-└── README.md
-```
-
-### 3. Pre-trained Models
-
-You can download our pre-trained model weights from [Link to Hugging Face Hub / Google Drive].
-
-Place the downloaded `.pth` or `.pt` file into the `checkpoints/` folder.
+### 3. Pretrained Models
+Download weights from [Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing) and place in `checkpoints/`
 
 ### 4. Evaluation
-
-To evaluate our pre-trained model on the [Dataset Name] test set, run the following command:
-
 ```bash
-python evaluate.py \
-    --model_name [your_model_name] \
-    --checkpoint_path checkpoints/[your_model_weight_file].pth \
-    --data_dir data/[Dataset-Name]
+python validate.py --arch=CLIP:ViT-L/14 --ckpt=checkpoints_our/~.pth --result_folder=result/xxx --real_path=xxx --fake_path=xxx --key=xxx
 ```
 
 ### 5. Training
+(This section will be updated soon)
 
-If you want to train the model from scratch, run:
-
-```bash
-# Single-GPU training
-python train.py \
-    --model_name [your_model_name] \
-    --data_dir data/[Dataset-Name] \
-    --epochs 100 \
-    --batch_size 64 \
-    --learning_rate 1e-4
-
-# (Optional) Multi-GPU training
-# torchrun --nproc_per_node=[NUM_GPUS] train.py ...
+### 6. Power Spectral Diagrams
+For generating diagrams, refer to `data/Enhanced.py` and note the residual extraction function:
+```python
+def _extract_residual(self, image, denoiser_sigma=1):
+    image_cpu = (image.cpu().numpy() * 255).astype(np.uint8)
+    denoised = cv2.fastNlMeansDenoising(image_cpu, h=denoiser_sigma)
+    return image - torch.tensor(denoised/255.0, device=self.device).float()
 ```
 
 ## 📊 Experimental Results
+Performance comparisons on multiple benchmarks:
 
-We have validated the effectiveness of our method on several benchmarks.
-
-<!-- Table: Another form of "chart", great for presenting quantitative results. -->
-### Performance Comparison on [Dataset A]
-
-| Method         | Backbone  | Accuracy (%) | F1-Score |
-|----------------|-----------|--------------|----------|
-| Baseline       | ResNet-50 | 85.2         | 0.84     |
-| Method X       | ResNet-50 | 87.5         | 0.87     |
-| **Ours**       | ResNet-50 | **89.1**     | **0.89** |
-| **Ours**       | ViT-Base  | **91.3**     | **0.91** |
-
-<!-- Diagram 3: Performance curve or visualization comparison. -->
-<!-- This could be a Loss/Accuracy curve during training, or a visual comparison of inputs/outputs. -->
+### ExImage Dataset
 <p align="center">
-  <img src="assets/performance_curve.png" width="60%" alt="Performance Curve"/>
+  <img src="images/ExImage.png" width="90%" alt="ExImage Performance"/>
   <br>
-  <em>Figure 3: Training accuracy curve on [Dataset A].</em>
+  <em>Figure 3: Accuracy on ExImage</em>
 </p>
 
-## 🤝 Contributing
+### GenImage Dataset
+<p align="center">
+  <img src="images/GenImage.png" width="90%" alt="GenImage Performance"/>
+  <br>
+  <em>Figure 4: Accuracy on GenImage</em>
+</p>
 
-We warmly welcome contributions from the community! If you have any ideas or find a bug, please feel free to:
-
-1.  Fork this repository
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
+### Cross-Dataset Evaluation
+<p align="center">
+  <img src="images/AIGC+chameleon.png" width="90%" alt="Cross-Dataset Performance"/>
+  <br>
+  <em>Figure 5: Accuracy on AGGCBenchmark and Chameleon</em>
+</p>
 
 ## 🎓 Citation
-
-If you find our work useful for your research, please consider citing our paper:
-
 ```bibtex
-@inproceedings{[your_citation_key],
-  author    = {[Author A] and [Author B]},
-  title     = {[Your Paper Title]},
-  booktitle = {[Conference Name]},
-  year      = {[Year]}
+@inproceedings{ExDA_mwp2025,
+  author    = {Wenpeng Mu, Zheng Li, Qiang Xu, Xinghao Jiang, and Tanfeng Sun},
+  title     = {ExDA: Towards Universal Detection and Plug-and-Play Attribution of AI-Generated Ex-Regulatory Images},
+  booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia (MM'25)},
+  year      = {2025}
 }
 ```
 
-## 🙏 Acknowledgements
+## 🙏 Acknowledgments
+* Shanghai Jiao Tong University's School of Computer Science (Cyberspace Security)
+* Contributors: Li Minyang, Yuan Yifan, Li Zheng, Qiu Hao, Jiang Nan, Wang Jiyun, Xie Taiyi, Zhou Xinbu, Yang Keyi
+* Code structure inspired by  karsh Ojha et al. CVPR 2023
 
-*   We thank [Organization/Individual] for providing computational resources.
-*   The code structure of this project is inspired by [link to another great open-source project].
-
----
-```
+  [1] karsh Ojha, Yuheng Li, and Yong Jae Lee. 2023. Towards Universal Fake Image Detectors that Generalize Across Generative Models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023. 24480–24489.
