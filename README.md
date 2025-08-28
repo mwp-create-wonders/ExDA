@@ -18,13 +18,15 @@
 
 
 ## 📰 最新动态
+-[2025-08-28] 🎉 我们整理发布ExImage数据集，现在可以访问[谷歌网盘](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载啦！！
+
 -[2025-08-17] 🎉 我们更新了绘制功率谱图的关键步骤说明，可以按照【快速开始】中的指引进行绘制！
 
 -[2025-08-15] 🎉 我们最新的一篇综述工作已经被ACM Computing Surveys期刊接受，题目为[Advancements in AI-Generated Content Forensics: A Systematic Literature Review](https://doi.org/10.1145/3760526)。欢迎各位同仁阅读并批评指正，如对您的研究有帮助，欢迎**引用**！
 
 -[2025-08-15] 🎉 我们更新了测试代码validate.py和工具文件earlystop.py，可以按照【快速开始】中的指引进行测试！
 
--[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问谷歌网盘下载啦！
+-[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问[谷歌网盘](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing)下载啦！
 
 -[2025-08-10] 🎉 我们更新部分代码，在data/文件夹下可以查看ExImage和GenImage功率谱图！
 
@@ -74,7 +76,8 @@
 *   **首创的专用数据集 (ExImage)**: 针对此特定领域，我们构建并开源了 **ExImage 数据集**。该数据集填补了特殊监管图像检测领域的空白，对维护社会稳定与公共安全具有重要意义。
 
 ## 📚 ExImage数据集
-我们将尽快更新内容
+
+请访问[谷歌网盘](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载。
 
 ## 🚀 快速开始
 
@@ -97,19 +100,9 @@ pip install -r requirements.txt
 
 ### 2. 数据准备
 
-！！！该部分我们正在整理更新
 
-请从 [数据来源链接] 下载 [数据集名称] 数据集，并将其解压至 `data/` 目录下。目录结构应如下所示：
+请从[谷歌网盘](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载ExImage数据集，并将其解压至 `data/` 目录.
 
-```
-[你的仓库名]/
-├── data/
-│   ├── [数据集名称]/
-│   │   ├── train/
-│   │   └── test/
-├── src/
-└── README.md
-```
 
 ### 3. 预训练模型
 
@@ -128,16 +121,7 @@ python validate.py --arch=CLIP:ViT-L/14 --ckpt=checkpoints_our/~.pth --result_fo
 ### 5. 训练
 
 ！！！该部分我们将尽快更新
-如果你想从头开始训练模型，请运行：
 
-```bash
-python train.py \
-    --model_name [你的模型名] \
-    --data_dir data/[数据集名称] \
-    --epochs 100 \
-    --batch_size 64 \
-    --learning_rate 1e-4
-```
 
 ### 6. 生成功率谱图
 如果你希望绘制图像的功率谱图，可以参考下面的说明。
@@ -184,7 +168,7 @@ def _extract_residual(self, image, denoiser_sigma=1):
 
 
 
-## 🎓 如何引用
+## 🎓 欢迎引用
 
 如果我们的工作对你的研究有所帮助，请**引用我们的论文**：
 
@@ -202,10 +186,9 @@ def _extract_residual(self, image, denoiser_sigma=1):
 ## 🙏 致谢
 
 *   感谢**上海交通大学计算机（网络空间安全）学院人工智能与认知安全研究所**提供的计算资源。
-*   感谢上海交通大学的李旻阳、袁一帆、李峥、邱昊、李晟彦、江楠和王跻燕等同学对数据集的贡献。
+*   感谢上海交通大学的李旻阳、袁一帆、李峥、邱昊、李晟彦、江楠、王跻燕、谢泰懿、周信步和杨可为等同学对数据集的贡献。
 *   本项目的代码结构参考了如下的优秀项目实践
   
   [1] karsh Ojha, Yuheng Li, and Yong Jae Lee. 2023. Towards Universal Fake Image Detectors that Generalize Across Generative Models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023. 24480–24489.
   
-  [2] 
 
