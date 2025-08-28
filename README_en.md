@@ -17,19 +17,20 @@
 This project is the official implementation of the conference paper **https://doi.org/10.1145/3746027.3755434** (ACM MM'25).
 
 ## 📰 Latest Updates
--[2025-08-28] 🎉 我们整理发布ExImage数据集，现在可以访问[Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载啦！！
 
--[2025-08-17] 🎉 我们更新了绘制功率谱图的关键步骤说明，可以按照【快速开始】中的指引进行绘制！
+- **[2025-08-28]** 🎉 The **ExImage dataset** is now publicly available! Download it from [Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing).  
 
--[2025-08-15] 🎉 我们最新的一篇综述工作已经被ACM Computing Surveys期刊接受，题目为[Advancements in AI-Generated Content Forensics: A Systematic Literature Review](https://doi.org/10.1145/3760526)。欢迎各位同仁阅读并批评指正，如对您的研究有帮助，欢迎**引用**！
+- **[2025-08-17]** 🎉 Updated guidelines for **power spectrum plotting** are live! Follow the steps in the **[Quick Start]** section to generate your plots.  
 
--[2025-08-15] 🎉 我们更新了测试代码validate.py和工具文件earlystop.py，可以按照【快速开始】中的指引进行测试！
+- **[2025-08-15]** 🎉 Our latest **survey paper**, titled *[Advancements in AI-Generated Content Forensics: A Systematic Literature Review](https://doi.org/10.1145/3760526)*, has been accepted by **ACM Computing Surveys**! We welcome feedback from the community. If it supports your research, please consider **citing** it.  
 
--[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问[Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing)下载啦！
+- **[2025-08-15]** 🎉 The testing script `validate.py` and utility file `earlystop.py` have been updated. Refer to **[Quick Start]** for usage instructions.  
 
--[2025-08-10] 🎉 我们更新部分代码，在data/文件夹下可以查看ExImage和GenImage功率谱图！
+- **[2025-08-11]** 🎉 New **pre-trained weights** released! Access them via [Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing).  
 
--[2025-07-06] 🎉 我们论文正式被ACM MM'25接受！
+- **[2025-08-10]** 🎉 Code updates: Power spectrum visualizations for **ExImage** and **GenImage** are now available under the `data/` folder.  
+
+- **[2025-07-06]** 🎉 Our paper has been officially accepted to **ACM MM'25**!  
 
 ## 🔍 Abstract
 With the proliferation of generative AI models for image synthesis, public demand for content safety has surged. While model developers have introduced alignment mechanisms to prevent harmful content generation, and extensive research exists on verifying AI-generated images' authenticity, a significant category of "Ex-Regulatory Images" remains undetected - these images evade existing regulatory frameworks and detection methods.
@@ -143,8 +144,8 @@ Performance comparisons on multiple benchmarks:
 ```
 
 ## 🙏 Acknowledgments
-* Shanghai Jiao Tong University's School of Computer Science (Cyberspace Security)
-* Contributors: Li Minyang, Yuan Yifan, Li Zheng, Qiu Hao, Jiang Nan, Wang Jiyun, Xie Taiyi, Zhou Xinbu, Yang Keyi
+* **Shanghai Jiao Tong University's School of Computer Science (Cyberspace Security)**
+* Contributors: **Li Minyang, Yuan Yifan, Li Zheng, Qiu Hao, Jiang Nan, Wang Jiyun, Xie Taiyi, Zhou Xinbu, Yang Keyi**
 * Code structure inspired by  karsh Ojha et al. CVPR 2023
 
   [1] karsh Ojha, Yuheng Li, and Yong Jae Lee. 2023. Towards Universal Fake Image Detectors that Generalize Across Generative Models. In IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR 2023. 24480–24489.
