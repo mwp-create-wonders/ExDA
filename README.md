@@ -18,7 +18,7 @@
 
 
 ## 📰 最新动态
--[2025-08-28] 🎉 我们整理发布ExImage数据集，现在可以访问[谷歌网盘](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载啦！！
+-[2025-08-28] 🎉 我们整理发布ExImage数据集，现在可以访问[Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载啦！！
 
 -[2025-08-17] 🎉 我们更新了绘制功率谱图的关键步骤说明，可以按照【快速开始】中的指引进行绘制！
 
@@ -26,7 +26,7 @@
 
 -[2025-08-15] 🎉 我们更新了测试代码validate.py和工具文件earlystop.py，可以按照【快速开始】中的指引进行测试！
 
--[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问[谷歌网盘](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing)下载啦！
+-[2025-08-11] 🎉 我们更新了预训练权重，现在可以访问[Google Drive](https://drive.google.com/file/d/1K7Otqbcx5vkNEciRtMgXXF9IVbb5cEgi/view?usp=sharing)下载啦！
 
 -[2025-08-10] 🎉 我们更新部分代码，在data/文件夹下可以查看ExImage和GenImage功率谱图！
 
@@ -77,7 +77,7 @@
 
 ## 📚 ExImage数据集
 
-请访问[谷歌网盘](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载。
+请访问[Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载。
 
 ## 🚀 快速开始
 
@@ -101,7 +101,7 @@ pip install -r requirements.txt
 ### 2. 数据准备
 
 
-请从[谷歌网盘](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载ExImage数据集，并将其解压至 `data/` 目录.
+请从[Google Drive](https://drive.google.com/file/d/1s2JYbZyMe-SzWjkja9tlZFrzIJiFhwI-/view?usp=sharing)下载ExImage数据集，并将其解压至 `data/` 目录.
 
 
 ### 3. 预训练模型
